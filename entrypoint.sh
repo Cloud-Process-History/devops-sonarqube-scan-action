@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
