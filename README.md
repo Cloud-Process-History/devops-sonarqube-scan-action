@@ -1,4 +1,4 @@
-# Cepsa - SonarQube Scan GitHub Action
+# SonarQube Scan GitHub Action
 
 Using this GitHub Action, scan your code with SonarQube scanner to detects bugs, vulnerabilities and code smells in more than 20 programming languages!
 
