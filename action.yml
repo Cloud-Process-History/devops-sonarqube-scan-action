@@ -10,7 +10,8 @@ runs:
 inputs:
   host:
     description: "SonarQube server URL"
-    required: true
+    required: false
+    default: ${{ secrets.TD_SONAR_HOST }}
   projectKey:
     description: "The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit."
     required: false
@@ -29,7 +30,9 @@ inputs:
     default: "."
   login:
     description: "Login or authentication token of a SonarQube user"
-    required: true
+    required: false
+    default: ${{ secrets.TD_SONAR_USER }}
   password:
     description: "Password that goes with the sonar.login username. This should be left blank if an authentication token is being used."
     required: false
+    default: ${{ secrets.TD_SONAR_PSW }} 
