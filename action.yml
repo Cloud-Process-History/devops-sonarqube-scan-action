@@ -18,6 +18,6 @@ inputs:
     description: "Password that goes with the sonar.login username"
     required: true
   projectBaseDir:
-    description: "Set the sonar.projectBaseDir analysis property"
+    description: "Set the sonar.projectBaseDir: Property to move analysis to a different directory"
     required: false
     default: "."    
