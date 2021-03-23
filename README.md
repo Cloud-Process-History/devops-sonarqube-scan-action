@@ -19,17 +19,6 @@ jobs:
         password: ${{ secrets.TD_SONAR_PSW }} 
 ```
 
-You can change the analysis base directory and/ project key _(allowed characters: letters, numbers, -, \_, . and :, with at least one non-digit.)_ by using the optional input like this:
-
-```yaml
-uses: cepsadigital/devops-sonar-github-action@master
-with:
-  projectBaseDir: "/path/to/my-custom-project"
-  projectKey: "my-custom-project"
-  projectName: "my-custom-project-name"
-  projectVersion: "v0.0.1"
-```
-
 ## Secrets
 
 - `host` - **_(Required)_** this is the Cepsa TD SonarQube server URL.
