@@ -9,7 +9,7 @@ The `github-action-devops-sonar-scan` Github Action will scan your code with Son
 | `host` | Cepsa TD SonarQube server URL | :heavy_check_mark: | |
 | `login` | SonarQube username | :heavy_check_mark: | |
 | `password` | SonarQube password | :heavy_check_mark: | |
-| `projectBaseDir` | sonar.projectBaseDir analysis property | | "." |
+| `projectBaseDir` | sonar.projectBaseDir: Property to move analysis to a different directory | | "." |
 
 ## Requirements
 
