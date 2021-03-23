@@ -32,7 +32,7 @@ with:
 
 ## Secrets
 
-- `host` - **_(Required)_** this is the SonarQube server URL.
+- `host` - **_(Required)_** this is the Cepsa TD SonarQube server URL.
 - `login` - **_(Required)_** this the username.
-- `password` - The password that goes with the `login` username.
+- `password` - **_(Required)_** this the passowrd.
 
