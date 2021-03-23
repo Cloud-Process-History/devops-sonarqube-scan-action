@@ -13,7 +13,7 @@ The `github-action-devops-sonar-scan` Github Action will scan your code with Son
 
 ## Requirements
 
-* `sonar-project.properties` file must exist in the root of the project. ( [example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-configurando-nuestro))
+* `sonar-project.properties` file must exist in the root of the project. ([example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-configurando-nuestro))
 * Dependency with [`cepsadigital/github-action-devops-test-and-code-analysis`](https://github.com/cepsadigital/github-action-devops-test-and-code-analysis) Action, which generates the coverage and security (bandit) reports in a previous step.
 
 ## Usage
