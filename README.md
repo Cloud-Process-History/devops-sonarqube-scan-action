@@ -13,7 +13,7 @@ The `github-action-devops-sonar-scan` Github Action will scan your code with Son
 
 ## Requirements
 
-* `sonar-project.properties` file must exist in the root of the project.
+* `sonar-project.properties` file must exist in the root of the project. ( [example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-configurando-nuestro))
 * Dependency with [`cepsadigital/github-action-devops-test-and-code-analysis`](https://github.com/cepsadigital/github-action-devops-test-and-code-analysis) Action, which generates the coverage and security (bandit) reports in a previous step.
 
 ## Usage
@@ -40,3 +40,8 @@ jobs:
 - `TD_SONAR_USER` - **_(Required)_** this is the SonarQube username.
 - `TD_SONAR_PSW` - **_(Required)_** this is the SonarQube password.
 
+## Contact
+
+DevOps Team - [Devops Documentation Portal](https://doc.devops.cepsacorp.com/) - devops@cepsa.com
+
+More GitHub Actions: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
