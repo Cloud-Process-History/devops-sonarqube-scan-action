@@ -23,5 +23,5 @@ jobs:
 
 - `host` - **_(Required)_** this is the Cepsa TD SonarQube server URL.
 - `login` - **_(Required)_** this is the SonarQube username.
-- `password` - **_(Required)_** this is the SonarQube passoword.
+- `password` - **_(Required)_** this is the SonarQube password.
 
