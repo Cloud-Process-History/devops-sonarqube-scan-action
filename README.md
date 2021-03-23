@@ -21,6 +21,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: SonarQube Scan
       uses: cepsadigital/github-action-devops-sonar-scan@master
       with:
