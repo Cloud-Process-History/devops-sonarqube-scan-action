@@ -1,4 +1,4 @@
-# SonarQube Scan GitHub Action
+# SonarQube Scan GitHub Action V1
 
 The `github-action-devops-sonar-scan` Github Action will scan your code with SonarQube to detects bugs, vulnerabilities and code smells.
 
@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: SonarQube Scan
-      uses: cepsadigital/github-action-devops-sonar-scan@master
+      uses: cepsadigital/github-action-devops-sonar-scan@v1
       with:
         host: ${{ secrets.TD_SONAR_HOST }}
         login: ${{ secrets.TD_SONAR_USER }}
