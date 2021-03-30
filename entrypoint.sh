@@ -5,3 +5,5 @@ sonar-scanner \
     	-Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     	-Dsonar.login=${INPUT_LOGIN} \
     	-Dsonar.password=${INPUT_PASSWORD}
+
+sh breakbuild.sh
