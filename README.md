@@ -10,6 +10,7 @@ The `github-action-devops-sonar-scan` Github Action will scan your code with Son
 | `login` | SonarQube username | :heavy_check_mark: | |
 | `password` | SonarQube password | :heavy_check_mark: | |
 | `projectBaseDir` | sonar.projectBaseDir: Property to move analysis to a different directory | | "." |
+| `checkQualityGate` | Flag to stop the workflow if sonar quality gate not passed | | "true" |
 
 ## Requirements
 
