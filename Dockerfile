@@ -11,7 +11,9 @@ LABEL homepage="https://github.com/cepsadigital"
 LABEL maintainer="Cepsa"
 
 COPY entrypoint.sh /entrypoint.sh
+COPY breakbuild.sh /breakbuild.sh
 
 RUN chmod +x /entrypoint.sh
+RUN chmod +x /breakbuild.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
