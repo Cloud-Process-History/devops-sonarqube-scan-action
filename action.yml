@@ -20,4 +20,8 @@ inputs:
   projectBaseDir:
     description: "Set the sonar.projectBaseDir: Property to move analysis to a different directory"
     required: false
-    default: "."    
+    default: "."
+  checkQualityGate:
+    description: "Flag to stop the workflow if sonar quality gate not passed"
+    required: false
+    default: "true"
