@@ -9,4 +9,6 @@ sonar-scanner \
 echo "------------------"
 echo " RUN QUALITY GATE "
 echo "------------------"
+pwd
+ls
 sh breakbuild.sh ${INPUT_HOST} ${INPUT_PASSWORD} ${INPUT_LOGIN} 
