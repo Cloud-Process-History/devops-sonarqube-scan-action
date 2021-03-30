@@ -6,10 +6,9 @@ sonar-scanner \
     	-Dsonar.login=${INPUT_LOGIN} \
     	-Dsonar.password=${INPUT_PASSWORD}
 
-cd /
 echo "------------------"
 echo " RUN QUALITY GATE "
 echo "------------------"
 pwd
 ls
-sh breakbuild.sh ${INPUT_HOST} ${INPUT_PASSWORD} ${INPUT_LOGIN} 
+sh /breakbuild.sh ${INPUT_HOST} ${INPUT_PASSWORD} ${INPUT_LOGIN} 
