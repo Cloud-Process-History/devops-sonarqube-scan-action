@@ -6,6 +6,7 @@ sonar-scanner \
     	-Dsonar.login=${INPUT_LOGIN} \
     	-Dsonar.password=${INPUT_PASSWORD}
 
+cd /
 echo "------------------"
 echo " RUN QUALITY GATE "
 echo "------------------"
