@@ -1,4 +1,4 @@
-# SonarQube Scan GitHub Action 1.0.0
+# SonarQube Scan GitHub Action 3.0.0
 
 The `github-action-devops-sonar-scan` Github Action will scan your code with SonarQube to detects bugs, vulnerabilities and code smells.
 
@@ -10,7 +10,8 @@ The `github-action-devops-sonar-scan` Github Action will scan your code with Son
 | `login` | SonarQube username | :heavy_check_mark: | |
 | `password` | SonarQube password | :heavy_check_mark: | |
 | `projectBaseDir` | sonar.projectBaseDir: Property to move analysis to a different directory | | "." |
-<!--| `checkQualityGate` | Flag to stop the workflow if sonar quality gate not passed | | "true" | -->
+| `checkQualityGate` | Flag to stop the workflow if sonar quality gate not passed | | "true" |
+| `verbose` | Flag to activate verbose mode to debug scan | | "false" |
 
 ## Requirements
 
@@ -28,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: SonarQube Scan
-      uses: cepsadigital/github-action-devops-sonar-scan@1.0.0
+      uses: cepsadigital/github-action-devops-sonar-scan@3.0.0
       with:
         host: ${{ secrets.TD_SONAR_HOST }}
         login: ${{ secrets.TD_SONAR_USER }}

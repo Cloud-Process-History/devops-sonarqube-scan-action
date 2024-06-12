@@ -5,8 +5,80 @@ branding:
   icon: "check"
   color: "green"
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps: 
+    - name: Cache sonar-scanner data
+      uses: actions/cache@v4
+      with:
+        path: .sonarcache
+        key: sonar-scanner-cache
+    - env:
+        INPUT_HOST: ${{ inputs.host }}
+        INPUT_LOGIN: ${{ inputs.login }}
+        INPUT_PASSWORD: ${{ inputs.password }}
+        INPUT_CHECKQUALITYGATE: ${{ inputs.checkQualityGate }}
+        INPUT_PROJECTBASEDIR: ${{ inputs.projectBaseDir }}
+        INPUT_VERBOSE: ${{ inputs.verbose }}
+      shell: bash
+      run: |
+        mkdir -p .sonarcache
+        chmod +x ${GITHUB_ACTION_PATH}/entrypoint.sh
+        docker run --rm \
+            -e PROJECT_NAME \
+            -e PROJECT_VERSION \
+            -e INPUT_HOST \
+            -e INPUT_LOGIN \
+            -e INPUT_HOST \
+            -e INPUT_PASSWORD \
+            -e INPUT_CHECKQUALITYGATE \
+            -e INPUT_PROJECTBASEDIR \
+            -e INPUT_VERBOSE \
+            -e "GITHUB_JOB" \
+            -e "GITHUB_REF" \
+            -e "GITHUB_SHA" \
+            -e "GITHUB_REPOSITORY" \
+            -e "GITHUB_REPOSITORY_OWNER" \
+            -e "GITHUB_REPOSITORY_OWNER_ID" \
+            -e "GITHUB_RUN_ID" \
+            -e "GITHUB_RUN_NUMBER" \
+            -e "GITHUB_RETENTION_DAYS" \
+            -e "GITHUB_RUN_ATTEMPT" \
+            -e "GITHUB_REPOSITORY_ID" \
+            -e "GITHUB_ACTOR_ID" \
+            -e "GITHUB_ACTOR" \
+            -e "GITHUB_TRIGGERING_ACTOR" \
+            -e "GITHUB_WORKFLOW" \
+            -e "GITHUB_HEAD_REF" \
+            -e "GITHUB_BASE_REF" \
+            -e "GITHUB_EVENT_NAME" \
+            -e "GITHUB_SERVER_URL" \
+            -e "GITHUB_API_URL" \
+            -e "GITHUB_GRAPHQL_URL" \
+            -e "GITHUB_REF_NAME" \
+            -e "GITHUB_REF_PROTECTED" \
+            -e "GITHUB_REF_TYPE" \
+            -e "GITHUB_WORKFLOW_REF" \
+            -e "GITHUB_WORKFLOW_SHA" \
+            -e "GITHUB_WORKSPACE" \
+            -e "GITHUB_ACTION" \
+            -e "GITHUB_EVENT_PATH" \
+            -e "GITHUB_ACTION_REPOSITORY" \
+            -e "GITHUB_ACTION_REF" \
+            -e "GITHUB_PATH" \
+            -e "GITHUB_ENV" \
+            -e "GITHUB_STEP_SUMMARY" \
+            -e "GITHUB_STATE" \
+            -e CI=true \
+            -v "/var/run/docker.sock":"/var/run/docker.sock" \
+            -v "/home/runner/work/_temp/_github_home":"/github/home" \
+            -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" \
+            -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" \
+            -v "${GITHUB_WORKSPACE}":"/github/workspace" \
+            -v ${GITHUB_ACTION_PATH}/entrypoint.sh:/entrypoint.sh \
+            -v "${GITHUB_WORKSPACE}/.sonarcache":/opt/sonar-scanner/.sonar/cache \
+            --entrypoint=/entrypoint.sh \
+            --workdir /github/workspace \
+            sonarsource/sonar-scanner-cli:5.0.0
 inputs:
   host:
     description: "SonarQube server URL"
@@ -25,3 +97,7 @@ inputs:
     description: "Flag to stop the workflow if sonar quality gate not passed"
     required: false
     default: "true"
+  verbose:
+    description: "Flag to activate verbose mode to debug scan"
+    required: false
+    default: "false"
